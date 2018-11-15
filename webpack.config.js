@@ -1,5 +1,6 @@
 const path = require("path");
 //const distDir = path.join(__dirname, "dist");
+const UglifyjsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
   //mode: "development",
@@ -19,7 +20,8 @@ const config = {
         use: ["babel-loader"]
       }
     ]
-  }
+  },
+  plugins: [new UglifyjsPlugin()]
 };
 
 module.exports = config;
